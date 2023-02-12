@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #ADD8E6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: rgb(195, 22, 22);
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding: 20px;
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+    }
+
+    #home {
+      display: block;
+    }
+
+    /* Add styles for hover effect */
+    .navbar a:hover {
+      background-color: cornflowerblue;
+    }
+
+    /* Add styles for Jai Kisan heading */
+    h1 {
+      text-align: center;
+      color: rgb(15, 161, 69);
+      font-size: 36px;
+      margin-top: 50px;
+    }
+
+    .hcon {
+      height: 500px;
+      width: 1400px;
+      padding: 35px 10px;
+      display: block;
+      margin: auto;
+      background-color: bisque;
+      font-size: xx-large;
+    }
+
+    /* Responsive styles */
+
+    @media only screen and (min-width:417px) and (max-width:726px) {
+      .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .navbar a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      /* Phone view */
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+
+      /* Tablet view */
+      nav {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 1008px) {
+      .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      .navbar a {
+        font-size: 16px;
+      }
+
+      .navbar .logo {
+        flex-basis: 40%;
+        text-align: center;
+      }
+
+      .navbar .nav-links {
+        display: none;
+      }
+
+      .navbar .menu-icon {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .navbar.active .nav-links {
+        display: block;
+        position: absolute;
+        background-color: #333;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      .navbar.active .nav-links a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 10px 20px;
+        border-bottom: 1px solid #444;
+      }
+    }
+
+    @media (max-width: 726px) {
+      .navbar {
+        padding: 10px;
+      }
+
+      .navbar .logo {
+        flex-basis: 50%;
+      }
+
+      .navbar a {
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 1025px) and (max-width: 1440px) {
+
+      /* Laptop view */
+      main {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    @media (min-width: 1441px) {
+
+      /* Desktop view */
+      main {
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div style="display: flex; align-items: center;">
+    <img class="logo" src="farmer.avif" alt="img not found" height="150px" width="150px">
+    <h1 style="margin: 0;padding: 0 100px;">Jai Kisan - A One Stop Solution for Farmers, Enthusiasts and Experts</h1>
+  </div>
+
+  <nav class="navbar">
+    <a href="#" id="home-link">Home</a>
+    <a href="#" id="government-schemes-link">Government Schemes</a>
+    <a href="soils.html" id="soils-of-india-link">Soils of India</a>
+    <a href="#" id="crops-of-india-link">Crops of India</a>
+    <!-- <a href="#" id="vegetation-of-india-link">Vegetation of India</a> -->
+    <a href="#" id="methods-and-technology-link">Methods and Technology</a>
+    
+    <a href="#" id="kisan-ki-baat-link">Kisan ki Baat</a>
+    <a href="#" id="queries-link">FAQS</a>
+    <a href="#" id="donate-link">Donate</a>
+  </nav>
+
+  <section id="home" class="section">
+    <h1>Home</h1>
+    <div class="hcon">
+      <p>Welcome to Jai Kisan, a web application dedicated to helping Indian farmers in their efforts to produce a
+        bountiful harvest and improve their lives. Our mission is to provide information and resources to help farmers
+        succeed in their endeavors. Whether you are a seasoned farmer or just starting out, Jai Kisan is here to help.
+      </p>
+      <p>
+        Many people want to do something or the other for the farmers but couldn't because they dont know what to do.
+        Many people want to do farming but don't know how to do.
+        This platform gathers such enthusiasts where they get to know the answers to many questions about farming which
+        they dont know about us.
+      </p>
+    </div>
+  </section>
+
+  <section id="government-schemes" class="section">
+    <h1>Government Schemes</h1>
+    <div class="hcon">
+      <p>The government of India provides several schemes and programs to support the farming community. These schemes
+        aim to provide financial assistance, subsidies, and other support to farmers. Some of the popular schemes are
+        Pradhan Mantri Fasal Bima Yojana, Pradhan Mantri Kisan Samman Nidhi, and National Bank for Agriculture and Rural
+        Development (NABARD).</p>
+      <p>Learn about various government schemes for farmers in India</p>
+      <p>Click on the link given to view central government schemes</p>
+      <a href="central.html" id="government-schemes-link">Central government schemes</a>
+      <p>Click on the link given to view state government schemes</p>
+      <a href="state.html" id="government-schemes-link">State government schemes</a>
+    </div>
+  </section>
+
+  <section id="crops-of-india" class="section">
+    <h1>Crops of India</h1>
+    <div class="hcon">
+      <p>India is known for its diverse agriculture and farming practices, with a variety of crops grown in different
+        regions of the country. Some of the major crops grown in India are rice, wheat, maize, cotton, sugarcane, and
+        pulses. India is also a leading producer of spices, fruits, and vegetables.</p>
+      <p>Learn about the different types of crops grown in India</p>
+      <a href="crop.html">click here</a>
+    </div>
+
+  </section>
+
+  <!-- <section id="vegetation-of-india" class="section">
+    <h1>Vegetation of India</h1>
+    <div class="hcon">
+      <p>India has a diverse range of vegetation, with different types of forests found in different regions of the
+        country. The country is home to tropical rainforests, deciduous forests, and coniferous forests. Some of the
+        most common tree species found in India include teak, sal, neem, and banyan. These forests not only provide a
+        habitat for a variety of wildlife, but they also play a crucial role in maintaining the ecological balance of
+        the region.</p>
+      <p>Learn about the different types of vegetation found in India</p>
+    </div>
+  </section> -->
+  <section id="soils-of-india" class="section">
+    <h1>Soils of India</h1>
+    <div class="hcon">
+      <p>India has a diverse range of soils, with different types of soils found in different regions of the country.
+        Some of the most common types of soils found in India are alluvial soil, red soil, black soil, laterite soil,
+        and mountain soil. Each type of soil has its own unique properties and characteristics, and it is important for
+        farmers to understand the type of soil in their region and how to best use it for agriculture.</p>
+      <p>To Learn about the different types of soils found in India click on the link</p>
+      <a href="soils.html" id="soils-of-india-link">Soils of India</a>
+    </div>
+  </section>
+
+  <section id="methods-and-technology" class="section">
+    <h1>Methods and Technology</h1>
+    <div class="hcon">
+      <p>Agricultural methods and technology play a crucial role in the success of farming operations. Modern farming
+        techniques, such as precision agriculture, use of drones, and precision planting, can help farmers increase
+        efficiency and productivity. At Jai Jawan, we aim to provide information and resources on the latest
+        agricultural methods and technology, to help farmers stay ahead of the curve and achieve success in their
+        endeavors.</p>
+      <p>To Learn about the latest methods and technologies used in agriculture click below</p>
+      <a href="methods.html">click here</a>
+    </div>
+  </section>
+
+ 
+
+  <section id="kisan-ki-baat" class="section">
+    <h1>Kisan ki Baat</h1>
+    <div class="hcon">
+      <p>At Jai Kisan, we also provide a platform for Farmers,Enthusiasts and Experts to share their thoughts and
+        experiences. "Kisan Ki Baat" is a forum where farmers can connect with each other and share their experiences,
+        challenges, and successes in their farming operations. Our aim is to create a supportive community where farmers
+        can learn from each other and work together to achieve success.</p>
+      <p>Click below to open kisan-ki-baat </p>
+      <a href="https://smrkchat.netlify.app/" id="kisan-ki-baat-link">Kisan ki Baat</a>
+    </div>
+  </section>
+
+  <section id="queries" class="section">
+    <div class="hcon">
+      <p>You can click on the below link given to check the faqs</p>
+      <a href="faq.html" id="queries-link">Click here</a>
+    </div>
+
+  </section>
+  <section id="donate" class="section">
+    <h1>Donate</h1>
+    <div class="hcon">
+      <p>Jai Kisan is a non-profit organization dedicated to helping Indian farmers. If you would like to support our
+        mission, you can donate to our organization. Your donation will help us continue to provide information and
+        resources to help farmers succeed in their endeavors.</p>
+      <p>Help support our mission to empower farmers and promote sustainable agriculture</p>
+      <a href="/Enthusiasts/donate.html">click here</a>
+
+
+    </div>
+  </section>
+
+  <script>
+    const navLinks = document.querySelectorAll(".navbar a");
+    const sections = document.querySelectorAll(".section");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const sectionId = link.id.replace("-link", "");
+        sections.forEach(section => {
+          if (section.id === sectionId) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

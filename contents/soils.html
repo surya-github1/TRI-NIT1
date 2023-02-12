@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Soil Type Suggestion</title>
+    <style>
+        body {
+            background-color: yellow;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: #1E90FF;
+            background-color: aquamarine;
+        }
+
+        #soil-type-select {
+            margin-top: 50px;
+            background-color: #FFFFFF;
+            /* White color */
+            border: 1px solid #1E90FF;
+            /* Dodger blue color */
+            padding: 10px;
+            font-size: 16px;
+            color: #1E90FF;
+            /* Dodger blue color */
+        }
+
+        #soil-info {
+            margin-top: 50px;
+            background-color: #b01111;
+            /* White color */
+            border: 1px solid #1E90FF;
+            /* Dodger blue color */
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            /* Dodger blue color */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Soil Type Suggestion</h1>
+    <select id="soil-type-select">
+        <option value="">Select a soil type</option>
+        <option value="alluvial">Alluvial</option>
+        <option value="black">Black (Regur soil)</option>
+        <option value="red">Red</option>
+        <option value="laterite">Laterite</option>
+        <option value="arid">Arid and Desert</option>
+        <option value="saline">Saline and Alkaline</option>
+    </select>
+    <div id="soil-info">
+        <p>Please select a soil type to see information and a crop suggestion.</p>
+    </div>
+    <script>
+        const soilInfoDiv = document.querySelector("#soil-info");
+        const soilTypeSelect = document.querySelector("#soil-type-select");
+
+        const alluvial = {
+            richIn: "Potash and Lime",
+            lacksIn: "Nitrogen and Phosphorous",
+            crops: "Large variety of rabi and kharif crops such as wheat, rice, sugarcane, cotton, jute etc."
+        };
+
+        const black = {
+            richIn: "Lime, Iron, Magnesia and Alumina, Potash",
+            lacksIn: "Phosphorous, Nitrogen and organic matter",
+            crops: "Cotton, sugarcane, jowar, tobacco, wheat, rice etc."
+        };
+
+        const red = {
+            richIn: "Iron and Potash",
+            lacksIn: "Nitrogen, Phosphorous and humus.",
+            crops: "Wheat, rice, cotton, sugarcane and pulses"
+        };
+
+        const laterite = {
+            richIn: "Iron oxide and potash",
+            lacksIn: "Organic matter, Nitrogen, Phosphate and Calcium",
+            crops: "Cashewnuts, tea, coffee, rubber"
+        };
+
+        const arid = {
+            richIn: "Soluble salts, phosphate",
+            lacksIn: "Humus, Nitrogen",
+            crops: "Only drought resistant and salt tolerant crops such as barley, rape, cotton, millets maize and pulses"
+        };
+
+        const saline = {
+            richIn: "Sodium, Potassium, Magnesium",
+            lacksIn: "Nitrogen and Calcium",
+            crops: "Unfit for agriculture"
+        };
+
+        soilTypeSelect.addEventListener("change", function () {
+            const selectedSoilType = soilTypeSelect.value;
+            let soilInfo;
+
+            switch (selectedSoilType) {
+                case "alluvial":
+                    soilInfo = alluvial;
+                    break;
+                case "black":
+                    soilInfo = black;
+                    break;
+                case "red":
+                    soilInfo = red;
+                    break;
+                case "laterite":
+                    soilInfo = laterite;
+                    break;
+                case "arid":
+                    soilInfo = arid;
+                    break;
+                case "saline":
+                    soilInfo = saline;
+                    break;
+                default:
+                    soilInfoDiv.innerHTML = "Please select a soil type.";
+                    return;
+            }
+
+            soilInfoDiv.innerHTML = `
+            <p><b>Rich in:</b> ${soilInfo.richIn}</p>
+            <p><b>Lacks in:</b> ${soilInfo.lacksIn}</p>
+            <p><b>Crops:</b> ${soilInfo.crops}</p>
+          `;
+        });
+    </script>
+</body>
+
+</html>

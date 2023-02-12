@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: lightgreen;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+
+footer {
+  background-color: lightgreen;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}

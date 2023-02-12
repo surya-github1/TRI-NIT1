@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>queries</title>
+    <style>
+        body {
+            background-color: rgb(153, 218, 196);
+        }
+
+        .layout {
+            width: 600px;
+            margin: auto;
+        }
+
+        .accordion {
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background: rgb(105, 206, 105);
+            border-radius: 10px;
+        }
+
+        .accordion__question p {
+            margin: 5px;
+            padding: 0;
+            font-family: Verdana;
+            font-size: 20px;
+        }
+
+        .accordion__answer p {
+            margin: 5px;
+            padding: 10px;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(255, 255, 255);
+            background: rgb(82, 170, 122);
+            border-radius: 10px;
+        }
+
+        .accordion:hover {
+            cursor: pointer;
+        }
+
+        .accordion__answer {
+            display: none;
+        }
+
+        .accordion.active .accordion__answer {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="color:green; text-align:center">Enthusiasts FAQ</h2>
+    <div class="layout">
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>How often should I water my plants?
+                </p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>The frequency of watering plants depends on the specific plant species, size of the pot, type of
+                    soil, and local environmental conditions. As a general rule, most plants should be watered when the
+                    top inch of soil is dry to the touch. Overwatering is a common mistake that can be harmful to
+                    plants, so be sure to avoid watering your plants too frequently.
+                </p>
+
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>What kind of pest cWhat is the best time of day to water my plants?
+                </p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>
+                    The best time to water your plants is in the morning or early afternoon, when the temperatures are
+                    cooler and the water has a chance to be absorbed before the heat of the day. Avoid watering your
+                    plants in the evening, as this can encourage the growth of fungi and other pathogens.
+
+                </p>
+
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>Is it better to water my plants deeply or more frequently with a little bit of water?
+                </p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>It is generally better to water your plants deeply and less frequently, as this helps promote deeper
+                    root growth and helps prevent the growth of shallow roots that are more susceptible to drought
+                    stress. When you water, be sure to provide enough water to thoroughly soak the soil, allowing the
+                    water to reach the roots.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>What type of water is best for watering plants?
+
+                </p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>Rainwater or distilled water is the best type of water for plants, as they are free of chlorine and
+                    other chemicals that can be harmful to plants. If these types of water are not available, tap water
+                    that has been allowed to sit for 24 hours can also be used, as this allows the chlorine to
+                    evaporate.
+
+                </p>
+
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>How can I tell if my plant is getting enough water?
+
+                </p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>There are a few signs that can indicate whether or not a plant is getting enough water. If the leaves
+                    of the plant are drooping or yellowing, this may be a sign that the plant is not getting enough
+                    water. Conversely, if the soil is consistently waterlogged or the roots are starting to rot, this
+                    may be a sign that the plant is getting too much water.
+
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>Can I use bottled water to water my plants?
+
+                </p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>Yes, you can use bottled water to water your plants. However, it is important to note that some
+                    bottled waters contain minerals or other additives that may not be ideal for your plants. Be sure to
+                    read the label and choose a water that is free of chemicals or additives, if possible.
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let answers = document.querySelectorAll(".accordion");
+        answers.forEach((event) => {
+            event.addEventListener('click', () => {
+                if (event.classList.contains("active")) {
+                    event.classList.remove("active");
+                }
+                else {
+                    event.classList.add("active");
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

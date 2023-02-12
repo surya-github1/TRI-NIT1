@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>queries</title>
+    <style>
+        body {
+            background-color: rgb(153, 218, 196);
+        }
+
+        .layout {
+            width: 600px;
+            margin: auto;
+        }
+
+        .accordion {
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background: rgb(105, 206, 105);
+            border-radius: 10px;
+        }
+
+        .accordion__question p {
+            margin: 5px;
+            padding: 0;
+            font-family: Verdana;
+            font-size: 20px;
+        }
+
+        .accordion__answer p {
+            margin: 5px;
+            padding: 10px;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(255, 255, 255);
+            background: rgb(82, 170, 122);
+            border-radius: 10px;
+        }
+
+        .accordion:hover {
+            cursor: pointer;
+        }
+
+        .accordion__answer {
+            display: none;
+        }
+
+        .accordion.active .accordion__answer {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="color:green; text-align:center">FARMERS FAQ</h2>
+    <div class="layout">
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>What kind of soil do you use?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>Fruits and vegetables get their nutrients from the soil – and that means a fruit or veggie is only as
+                    nourishing as the soil in which it was grown.
+
+                    Great, fertile soil is its own ecosystem, with microorganisms and organisms that work together to
+                    break down and create nutrient-rich matter. Soil also works within the larger ecosystem of the farm,
+                    including the animals that fertilize or graze, the birds in the area, the water used, the sunshine,
+                    and more. A good farmer will understand this symbiotic environment and work to create soil that is
+                    nourishing.</p>
+
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>What kind of pest control measures do you use? Do you spray all year or at the beginning of the
+                    season, or only as needed?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>
+                    Some farmers may not use pesticides on a regular basis, but only in special circumstances when there
+                    is an infestation or maybe at the beginning of the growing season. Inquire about this, as well as
+                    the farmer’s approach to dealing with pests. Pest control is a part of farming no matter what – but
+                    methods to deal with it differ.
+                </p>
+
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>Do you have any certifications?</p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>Ask your farmer if he or she has any certifications, such as certified organic or any animal welfare
+                    certifications if the farm raises animals. These certifications will vary from country to country.
+
+                    Now, normally I say that labels are for tin cans and certifications aren’t the whole story of a
+                    farm. But it’s good to know if your farmer has pursued any relevant certifications.
+
+                    It’s definitely possible that a farm practices organic and biodynamic growing techniques, but can’t
+                    afford the expensive certification process. That’s why it’s equally important to ask about how they
+                    grow their food.</p>
+
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>How much water do my crops need and what is the best way to irrigate them?
+                </p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>The amount of water that crops need can vary greatly depending on the crop type, growth stage, and
+                    local climate conditions. Generally, crops need more water during periods of rapid growth and
+                    fruiting. The best way to irrigate crops will depend on the available water sources and the specific
+                    irrigation system that the farmer has in place. Options for irrigation include overhead sprinklers,
+                    drip irrigation, and furrow irrigation.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>What is the optimal pH range for my soil and how can I maintain it?
+                </p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>The optimal pH range for soil varies depending on the crop, but most crops grow best in soil that has
+                    a pH between 6.0 and 7.0. To maintain the soil pH, farmers can add lime to increase the pH or sulfur
+                    to decrease the pH. Regular soil testing can help farmers determine the current pH level and make
+                    adjustments as necessary.
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="accordion">
+            <div class="accordion__question">
+                <p>How can I determine the nutrient needs of my soil and provide proper fertilization?
+                </p>
+
+            </div>
+            <div class="accordion__answer">
+                <p>Soil testing is the best way to determine the nutrient needs of soil. Based on the test results,
+                    farmers can apply the appropriate amounts of fertilizer to ensure that their crops have the
+                    necessary nutrients for optimal growth. Fertilizers can be in the form of commercial fertilizers or
+                    organic materials such as compost and manure.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let answers = document.querySelectorAll(".accordion");
+        answers.forEach((event) => {
+            event.addEventListener('click', () => {
+                if (event.classList.contains("active")) {
+                    event.classList.remove("active");
+                }
+                else {
+                    event.classList.add("active");
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

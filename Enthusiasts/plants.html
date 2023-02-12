@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: rgb(255, 0, 144);
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    #crop-list {
+      margin-bottom: 20px;
+    }
+
+    #crop-selector {
+      margin-top: 50px;
+      background-color: #FFFFFF;
+      /* White color */
+      border: 1px solid #1E90FF;
+      /* Dodger blue color */
+      padding: 10px;
+      font-size: xx-large;
+      font-size: 16px;
+      color: #1E90FF;
+      /* Dodger blue color */
+    }
+
+    #info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    #crop-info {
+      margin-top: 50px;
+      background-color: #b01111;
+      /* White color */
+      border: 1px solid #1E90FF;
+      /* Dodger blue color */
+      padding: 10px;
+      color: yellow;
+      height: 720px;
+      /* width: 676px; */
+      text-align: center;
+      font-size: xxx-large;
+      /* Dodger blue color */
+    }
+
+    #info h3 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin-top: 50px;
+      color: #1E90FF;
+      background-color: aquamarine;
+    }
+
+
+    #info p {
+      color: #555;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Water Requirement and total growing period of plants</h1>
+  <div id="crop-selector">
+    <select id="crop-list">
+      <option value="">Select a crop</option>
+      <option value="Alfalfa">Alfalfa</option>
+      <option value="Banana">Banana</option>
+      <option value="Barley/Oats/Wheat">Barley/Oats/Wheat</option>
+      <option value="Bean">Bean</option>
+      <option value="Cabbage">Cabbage</option>
+      <option value="Citrus">Citrus</option>
+      <option value="Cotton">Cotton</option>
+      <option value="Maize">Maize</option>
+      <option value="Melon">Melon</option>
+      <option value="Onion">Onion</option>
+      <option value="Peanut">Peanut</option>
+      <option value="Pea">Pea</option>
+      <option value="Pepper">Pepper</option>
+      <option value="Potato">Potato</option>
+      <option value="Rice (paddy)">Rice (paddy)</option>
+      <option value="Sorghum/Millet">Sorghum/Millet</option>
+      <option value="Soybean">Soybean</option>
+      <option value="Sugarbeet">Sugarbeet</option>
+      <option value="Sugarcane">Sugarcane</option>
+      <option value="Sunflower">Sunflower</option>
+      <option value="Tomato">Tomato</option>
+    </select>
+  </div>
+
+  <div id="crop-info">
+    <p id="water-need">Water need mm/total growing-period: <span id="water-need-value"></span></p>
+    <p id="growing-period">Total growing period (days): <span id="growing-period-value"></span></p>
+  </div>
+  <script>
+    const cropData = {
+      Alfalfa: { waterNeed: '800-1600', growingPeriod: '100-365' },
+      Banana: { waterNeed: '1200-2200', growingPeriod: '300-365' },
+      'Barley/Oats/Wheat': { waterNeed: '450-650', growingPeriod: '120-150' },
+      Bean: { waterNeed: '300-500', growingPeriod: '75-90' },
+      Cabbage: { waterNeed: '350-500', growingPeriod: '120-140' },
+      Citrus: { waterNeed: '900-1200', growingPeriod: '240-365' },
+      Cotton: { waterNeed: '700-1300', growingPeriod: '180-195' },
+      Maize: { waterNeed: '500-800', growingPeriod: '80-110' },
+      Melon: { waterNeed: '400-600', growingPeriod: '120-160' },
+      Onion: { waterNeed: '350-550', growingPeriod: '150-210' },
+      Peanut: { waterNeed: '500-700', growingPeriod: '130-140' },
+      Pea: { waterNeed: '350-500', growingPeriod: '90-100' },
+      Pepper: { waterNeed: '600-900', growingPeriod: '120-210' },
+      Potato: { waterNeed: '500-700', growingPeriod: '105-145' },
+      'Rice (paddy)': { waterNeed: '450-700', growingPeriod: '90-150' },
+      'Sorghum/Millet': { waterNeed: '450-650', growingPeriod: '120-130' },
+      Soybean: { waterNeed: '450-700', growingPeriod: '135-150' },
+      Sugarbeet: { waterNeed: '550-750', growingPeriod: '160-230' },
+      Sugarcane: { waterNeed: '1500-2500', growingPeriod: '270-365' },
+      Sunflower: { waterNeed: '600-1000', growingPeriod: '125-130' },
+      Tomato: { waterNeed: '400-800', growingPeriod: '135-180' },
+    };
+
+    const cropList = document.getElementById('crop-list');
+    const waterNeedValue = document.getElementById('water-need-value');
+    const growingPeriodValue = document.getElementById('growing-period-value');
+
+    cropList.addEventListener('change', (event) => {
+      const selectedCrop = cropData[event.target.value];
+      if (selectedCrop) {
+        waterNeedValue.textContent = selectedCrop.waterNeed;
+        growingPeriodValue.textContent = selectedCrop.growingPeriod;
+      } else {
+        waterNeedValue.textContent = '';
+        growingPeriodValue.textContent = '';
+      }
+    });
+
+  </script>
+</body>
+
+</html>

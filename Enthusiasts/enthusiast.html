@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #ADD8E6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: rgb(195, 22, 22);
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      padding: 20px;
+    }
+
+    .section {
+      display: none;
+      padding: 20px;
+    }
+
+    #home {
+      display: block;
+    }
+
+    /* Add styles for hover effect */
+    .navbar a:hover {
+      background-color: cornflowerblue;
+    }
+
+    /* Add styles for Jai Kisan heading */
+    h1 {
+      text-align: center;
+      color: rgb(15, 161, 69);
+      font-size: 36px;
+      margin-top: 50px;
+    }
+
+    .hcon {
+      height: 500px;
+      width: 1400px;
+      padding: 35px 10px;
+      display: block;
+      margin: auto;
+      background-color: bisque;
+      font-size: xx-large;
+    }
+
+    @media only screen and (min-width:417px) and (max-width:726px) {
+      .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .navbar a {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      /* Phone view */
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+
+      /* Tablet view */
+      nav {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 1008px) {
+      .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      .navbar a {
+        font-size: 16px;
+      }
+
+      .navbar .logo {
+        flex-basis: 40%;
+        text-align: center;
+      }
+
+      .navbar .nav-links {
+        display: none;
+      }
+
+      .navbar .menu-icon {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .navbar.active .nav-links {
+        display: block;
+        position: absolute;
+        background-color: #333;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      .navbar.active .nav-links a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        padding: 10px 20px;
+        border-bottom: 1px solid #444;
+      }
+    }
+
+    @media (max-width: 726px) {
+      .navbar {
+        padding: 10px;
+      }
+
+      .navbar .logo {
+        flex-basis: 50%;
+      }
+
+      .navbar a {
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 1025px) and (max-width: 1440px) {
+
+      /* Laptop view */
+      main {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    @media (min-width: 1441px) {
+
+      /* Desktop view */
+      main {
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Add Jai Kisan heading -->
+  <h1>Jai Kisan</h1>
+
+  <nav class="navbar">
+    <a href="#" id="home-link">Home</a>
+    <a href="#" id="my-garden-link">My Garden</a>
+    <a href="#" id="Notifications">Notifications</a>
+    <a href="#" id="kisan-ki-baat-link">Enthus ki Baat</a>
+    <a href="#" id="Queries">FAQS</a>
+    <a href="#" id="donate-link">Donate</a>
+  </nav>
+
+  <section id="home" class="section">
+    <h1>Home</h1>
+    <div class="hcon">
+      <p>Welcome to Jai Kisan, a web application dedicated to helping Indian farmers in their efforts to produce a
+        bountiful harvest and improve their lives. Our mission is to provide information and resources to help farmers
+        succeed in their endeavors. Whether you are a seasoned farmer or just starting out, Jai Kisan is here to help.
+      </p>
+      <p>
+        Many people want to do something or the other for the farmers but couldn't because they dont know what to do.
+        Many people want to do farming but don't know how to do.
+        This platform gathers such enthusiasts where they get to know the answers to many questions about farming which
+        they dont know about us.
+      </p>
+    </div>
+  </section>
+
+  <section id="Notifications" class="section">
+    <div class="hcon">
+      <h1>Notifications</h1>
+      <p>To get Notificatioins about your plants and Water Requirement and total growing period of plants click on the
+        link given below</p>
+      <a href="plants.html">click here</a>
+    </div>
+  </section>
+  <section id="my-garden" class="section">
+    <h1>My Garden</h1>
+    <div class="hcon">
+      <p>Jai Kisan not only provides real-time information on your garden, but also sends notifications to water your
+        plants based on the type of plants you have added to your garden. This innovative feature allows gardening
+        enthusiasts to ensure that their plants receive the appropriate amount of water and can flourish, without having
+        to constantly monitor their garden themselves</p>
+      <p>Click below for viewing and maintaining your own garden plants</p>
+      <a href="garden.html">click here</a>
+
+    </div>
+  </section>
+  <section id="Queries" class="section">
+    <div class="hcon">
+      <p>You can click on the below link given to check the faqs</p>
+      <a href="faq.html" id="queries-link">Click here</a>
+    </div>
+
+  </section>
+  <section id="kisan-ki-baat" class="section">
+    <h1>Enthus ki Baat</h1>
+    <div class="hcon">
+      <p>At Jai Kisan, we also provide a platform for Farmers,Enthusiasts and Experts to share their thoughts and
+        experiences. "Kisan Ki Baat" is a forum where farmers can connect with each other and share their experiences,
+        challenges, and successes in their farming operations. Our aim is to create a supportive community where farmers
+        can learn from each other and work together to achieve success.</p>
+      <p>Click below to open kisan-ki-baat </p>
+      <a href="https://smrkchat.netlify.app/" id="kisan-ki-baat-link">Kisan ki Baat</a>
+    </div>
+  </section>
+  <section id="donate" class="section">
+    <h1>Donate</h1>
+    <div class="hcon">
+      <p>Jai Kisan is a non-profit organization dedicated to helping Indian farmers. If you would like to support our
+        mission, you can donate to our organization. Your donation will help us continue to provide information and
+        resources to help farmers succeed in their endeavors.</p>
+      <p>Help support our mission to empower farmers and promote sustainable agriculture</p>
+      <a href="donate.html">click here</a>
+
+
+    </div>
+  </section>
+
+
+  <script>
+    const navLinks = document.querySelectorAll(".navbar a");
+    const sections = document.querySelectorAll(".section");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const sectionId = link.id.replace("-link", "");
+        sections.forEach(section => {
+          if (section.id === sectionId) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

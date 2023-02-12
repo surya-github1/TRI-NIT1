@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Plant Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        #plant-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #plant-list .plant {
+            width: calc(33.33% - 20px);
+            background-color: #eee;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Garden Plants Tracker</h1>
+    </header>
+    <main>
+        <form>
+            <label for="plant-name">Plant Name:</label>
+            <input type="text" id="plant-name" name="plant-name">
+            <label for="water-frequency">Water Frequency (in days):</label>
+            <input type="number" id="water-frequency" name="water-frequency">
+            <label for="last-watered">Last Watered:</label>
+            <input type="date" id="last-watered" name="last-watered">
+            <button type="submit">Add Plant</button>
+        </form>
+        <section id="plant-list">
+            <!-- plant list will be dynamically generated here -->
+        </section>
+    </main>
+</body>
+
+</html>

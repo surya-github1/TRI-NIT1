@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: sandybrown;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 50px;
+            color: #1E90FF;
+            background-color: aquamarine;
+        }
+        p{
+            font-size: xx-large;
+            color: black;
+        }
+        #cropType {
+            margin-top: 50px;
+            background-color: #FFFFFF;
+            /* White color */
+            border: 1px solid #1E90FF;
+            /* Dodger blue color */
+            padding: 10px;
+            font-size: 16px;
+            color: #1E90FF;
+            /* Dodger blue color */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Select Crop Season to get the information :</h1>
+    <select id="cropType">
+        <option value="kharif">Kharif</option>
+        <option value="rabi">Rabi</option>
+        <option value="zaid">Zaid</option>
+    </select>
+    <br><br>
+    <div id="cropInfo"></div>
+
+    <script>
+        const cropType = document.getElementById("cropType");
+        const cropInfo = document.getElementById("cropInfo");
+
+        cropType.addEventListener("change", function () {
+            switch (cropType.value) {
+                case "kharif":
+                    cropInfo.innerHTML = `
+              <h3>Kharif Crops:</h3>
+              <p>July – October</p>
+              <p>Harvest – September to October</p>
+              <p>A.k.a Monsoon Crops</p>
+              <p>Such crops require a lot of water</p>
+              <p>Examples: rice, sorghum, maize, tea, rubber, coffee, guar, Sesame, cereals such as Arhar Dhal, pearl millet, soybeans, cotton, oilseeds, etc.</p>
+            `;
+                    break;
+                case "rabi":
+                    cropInfo.innerHTML = `
+              <h3>Rabi Crops:</h3>
+              <p>Sowing between October and November</p>
+              <p>Harvest – February to April</p>
+              <p>A.k.a Winter Season Crops</p>
+              <p>Need cold weather for growth</p>
+              <p>Need less water</p>
+              <p>Examples: wheat, oats, barley, pulses, cereals, oilseeds, linseed, etc.</p>
+            `;
+                    break;
+                case "zaid":
+                    cropInfo.innerHTML = `
+              <h3>Zaid Crops:</h3>
+              <p>Sowing between March and June (between Kharif and Rabi)</p>
+              <p>Requires warm & dry weather for growth and a longer day-length for flowering</p>
+              <p>Examples: Seasonal fruits and vegetables</p>
+            `;
+                    break;
+                default:
+                    cropInfo.innerHTML = "";
+                    break;
+            }
+        });
+    </script>
+</body>
+
+</html>

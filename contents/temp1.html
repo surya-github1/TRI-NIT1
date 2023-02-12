@@ -1,0 +1,73 @@
+<html>
+<head>
+  <style>
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .form input[type="text"],
+    .form select {
+      width: 300px;
+      height: 40px;
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 18px;
+    }
+
+    .form button {
+      width: 200px;
+      height: 40px;
+      margin-top: 20px;
+      font-size: 18px;
+      background-color: lightgreen;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form">
+    <h1>Suggest a Crop</h1>
+    <input type="text" id="soilType" placeholder="Enter soil type">
+    <select id="season">
+      <option value="">Select a season</option>
+      <option value="spring">Spring</option>
+      <option value="summer">Summer</option>
+      <option value="fall">Fall</option>
+      <option value="winter">Winter</option>
+    </select>
+    <input type="text" id="geographicalLocation" placeholder="Enter geographical location">
+    <button onclick="suggestCrop()">Suggest a Crop</button>
+    <p id="suggestion"></p>
+  </div>
+
+  <script>
+    function suggestCrop() {
+      let soilType = document.getElementById("soilType").value;
+      let season = document.getElementById("season").value;
+      let geographicalLocation = document.getElementById("geographicalLocation").value;
+      let suggestion = document.getElementById("suggestion");
+
+      if (!soilType || !season || !geographicalLocation) {
+        suggestion.innerHTML = "Please enter the soil type, season, and geographical location.";
+        return;
+      }
+
+      let crop = "";
+      if (soilType === "sandy" && season === "summer" && geographicalLocation === "tropical") {
+        crop = "Watermelon";
+      } else if (soilType === "clay" && season === "spring" && geographicalLocation === "temperate") {
+        crop = "Potatoes";
+      } else if (soilType === "loamy" && season === "fall" && geographicalLocation === "tropical") {
+        crop = "Pumpkins";
+      } else {
+        crop = "Sorry, I cannot suggest a crop with the information provided.";
+      }
+
+      suggestion.innerHTML = crop;
+    }
+  </script>
+</body>
+</html>

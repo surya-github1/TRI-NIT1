@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Different State Government Schemes</h1>
+    <select id="soil-type-select">
+        <option value="">Select a state</option>
+        <option value="telangana">Telangana</option>
+        <option value="karnataka">Karnataka (Regur soil)</option>
+        <option value="tn">Tamil Nadu</option>
+    </select>
+    <div id="soil-info">
+        <p>Please select a state to see government schemes.</p>
+    </div>
+    <script>
+        const soilInfoDiv = document.querySelector("#soil-info");
+        const soilTypeSelect = document.querySelector("#soil-type-select");
+
+        const telangana = {
+            ForTelanganaStateFarmers : <a href="https://www.manage.gov.in/fpoacademy/CGSchemes/Telangana%20Govt%20Schemes.pdf">Click here</a>,
+
+    };
+
+        const tn = {
+            ForTamilNaduStateFarmersschemes : <a href="https://agritech.tnau.ac.in/agricultural_engineering/agriengg_govt_schemes.html">Click here</a>,
+
+        };
+
+        const karnataka = {
+            ForKarnatakaStateFarmersschemes :  <a href="https://raitamitra.karnataka.gov.in/english">Click here</a>,
+
+        };
+</script>
+</body>
+</html>
